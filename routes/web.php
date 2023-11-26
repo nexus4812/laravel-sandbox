@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +11,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+use \Illuminate\Routing\Router;
+
+/** @var Router $route */
+$route = resolve(Router::class);
+
+$route->get('/', function () {
     return view('welcome');
 });
